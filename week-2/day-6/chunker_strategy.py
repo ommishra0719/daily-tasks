@@ -9,7 +9,7 @@ class ChunkerStrategy(abc.ABC):
     #The common interface for all chunking strategies. Any new chunker must implement the 'chunk' method.
     @abc.abstractmethod
     def chunk(self, text: str) -> List[str]:
-        pass
+        pass # pragma: no cover
 
 # ---------------------------------------------------------
 # 2. Concrete Strategies
@@ -87,7 +87,7 @@ class DocumentProcessor:
 # ---------------------------------------------------------
 # 4. Test Suite / Execution
 # ---------------------------------------------------------
-if __name__ == "__main__":
+if __name__ == "__main__": # pragma: no cover
     sample_text = (
         "Design patterns are great. They make code modular. "
         "Here is a second paragraph.\n\n"
