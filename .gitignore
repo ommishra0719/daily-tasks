@@ -10,3 +10,4 @@ ENV/
 .DS_Store
 Thumbs.db
 .coverage
+logs
