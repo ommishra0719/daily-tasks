@@ -1,12 +1,29 @@
 import asyncio
 import aiohttp
-import logging
 import time
+import uuid
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s"
+# ===== NEW (Day-8): Needed for importing files from week-2/day-8 =====
+import sys
+from pathlib import Path
+
+# Go up to project root
+project_root = Path(__file__).resolve().parents[2]
+
+# Add week-2/day-8 to sys.path
+sys.path.append(
+    str(project_root / "week-2" / "day-8")
 )
+
+# ===== NEW (Day-8): Import logger configuration and exceptions =====
+from logging_config import setup_logger
+from exceptions import (
+    FetchTimeoutError,
+    HTTPRequestError
+)
+
+# ===== NEW (Day-8): Initialize Loguru logger =====
+logger = setup_logger()
 
 URLS = [
     "https://jsonplaceholder.typicode.com/posts/1",
@@ -17,9 +34,17 @@ URLS = [
 ]
 
 
-async def fetch(session, url):
+# ===== CHANGED (Day-8): Added request_id parameter =====
+async def fetch(session, url, request_id):
+
+    # ===== NEW (Day-8): Structured logger with correlation ID =====
+    log = logger.bind(request_id=request_id)
 
     try:
+
+        # ===== NEW (Day-8): Measure latency =====
+        start = time.perf_counter()
+
         async with asyncio.timeout(5):
 
             async with session.get(url) as response:
@@ -28,20 +53,44 @@ async def fetch(session, url):
 
                 data = await response.json()
 
-                logging.info(f"Fetched {url}")
+                # ===== NEW (Day-8): Calculate latency =====
+                latency_ms = (
+                    time.perf_counter() - start
+                ) * 1000
+
+                # ===== CHANGED (Day-8): Structured logging =====
+                log.info(
+                    f"Fetched {url} "
+                    f"(latency={latency_ms:.2f} ms)"
+                )
 
                 return data
 
+    # ===== CHANGED (Day-8): Custom exception =====
     except TimeoutError:
 
-        logging.error(f"Timeout while fetching {url}")
+        log.error(f"Timeout while fetching {url}")
 
-    except Exception as e:
+        raise FetchTimeoutError(
+            f"Request timed out for {url}"
+        )
 
-        logging.error(f"Error fetching {url}: {e}")
+    # ===== CHANGED (Day-8): More specific exception =====
+    except aiohttp.ClientError as e:
+
+        log.error(
+            f"HTTP request failed for {url}: {e}"
+        )
+
+        raise HTTPRequestError(
+            f"HTTP request failed for {url}"
+        )
 
 
 async def sequential_fetch():
+
+    # ===== NEW (Day-8): Correlation ID =====
+    request_id = str(uuid.uuid4())
 
     async with aiohttp.ClientSession() as session:
 
@@ -49,7 +98,12 @@ async def sequential_fetch():
 
         for url in URLS:
 
-            result = await fetch(session, url)
+            # ===== CHANGED (Day-8): Pass request_id =====
+            result = await fetch(
+                session,
+                url,
+                request_id
+            )
 
             results.append(result)
 
@@ -58,14 +112,22 @@ async def sequential_fetch():
 
 async def concurrent_fetch():
 
+    # ===== NEW (Day-8): Correlation ID =====
+    request_id = str(uuid.uuid4())
+
     async with aiohttp.ClientSession() as session:
 
         tasks = [
-            fetch(session, url)
+            # ===== CHANGED (Day-8): Pass request_id =====
+            fetch(session, url, request_id)
             for url in URLS
         ]
 
-        results = await asyncio.gather(*tasks)
+        # ===== CHANGED (Day-8): Preserve exceptions =====
+        results = await asyncio.gather(
+            *tasks,
+            return_exceptions=True
+        )
 
         return results
 
@@ -78,10 +140,11 @@ async def main():
 
     sequential_time = time.perf_counter() - start
 
-    logging.info(
-        f"Sequential completed in {sequential_time:.4f} seconds"
+    # ===== CHANGED (Day-8): Loguru logger instead of logging.info =====
+    logger.info(
+        f"Sequential completed in "
+        f"{sequential_time:.4f} seconds"
     )
-
 
     start = time.perf_counter()
 
@@ -89,12 +152,14 @@ async def main():
 
     concurrent_time = time.perf_counter() - start
 
-    logging.info(
-        f"Concurrent completed in {concurrent_time:.4f} seconds"
+    logger.info(
+        f"Concurrent completed in "
+        f"{concurrent_time:.4f} seconds"
     )
 
-    logging.info(
-        f"Speedup = {sequential_time/concurrent_time:.2f}x"
+    logger.info(
+        f"Speedup = "
+        f"{sequential_time/concurrent_time:.2f}x"
     )
 
 
