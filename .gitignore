@@ -11,3 +11,21 @@ ENV/
 Thumbs.db
 .coverage
 logs
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+*.whl
+
+# Type checking & linting
+.mypy_cache/
+.ruff_cache/
+
+# Code coverage
+htmlcov/
+.pytest_cache/
+
+# Profiling
+*.lprof
+*.prof
