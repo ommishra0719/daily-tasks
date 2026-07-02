@@ -29,3 +29,13 @@ htmlcov/
 # Profiling
 *.lprof
 *.prof
+
+# Database
+app.db
+*.db
+*.sqlite3
+
+# Testing (I see .coverage in your sidebar!)
+.coverage
+htmlcov/
+.pytest_cache/
