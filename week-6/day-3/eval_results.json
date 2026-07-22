@@ -1,0 +1,130 @@
+{
+  "timestamp": 1784704659.3579872,
+  "total_tests": 10,
+  "mean_correctness": 5.0,
+  "mean_relevance": 5.0,
+  "fail_rate_percentage": 0.0,
+  "failed_test_ids": [],
+  "detailed_results": [
+    {
+      "test_id": "TC-001",
+      "question": "What is the capital of Australia?",
+      "generated_answer": "The capital of Australia is **Canberra**.",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The generated answer correctly identifies Canberra as the capital of Australia and directly addresses the question."
+      },
+      "passed": true,
+      "latency_ms": 1151.59
+    },
+    {
+      "test_id": "TC-002",
+      "question": "Explain the primary function of mitochondria.",
+      "generated_answer": "The primary function of mitochondria is to **generate energy for the cell** through a process called **cellular respiration**. \n\nOften referred to as the **\"powerhouses of the cell,\"** mitochondria take nutrients from the food we eat\u2014primarily glucose\u2014and convert them into a chemical energy molecule called **adenosine triphosphate (ATP)**. \n\nHere is a breakdown of how this process works and why it is vital:\n\n### 1. ATP Production (Energy Currency)\nATP acts like a rechargeable battery for the cell. Whenever a cell needs to perform work\u2014such as muscle contraction, sending nerve impulses, or building complex molecules\u2014it breaks down ATP to release the energy stored inside. Without a constant supply of ATP from mitochondria, most cells would quickly die.\n\n### 2. The Main Steps of Energy Generation\nMitochondria produce ATP through a multi-step process, most of which takes place within their folded inner membranes (called *cristae*):\n* **The Citric Acid Cycle (Krebs Cycle):** Breaks down fuel molecules to capture high-energy electrons.\n* **Oxidative Phosphorylation (Electron Transport Chain):** Uses those electrons to pump protons across the mitochondrial membrane, ultimately driving the creation of large amounts of ATP. \n*(Note: This process requires oxygen, which is why we need to breathe).*\n\n### Other Important Functions\nWhile energy production is their main job, mitochondria also play crucial roles in other cellular processes:\n* **Apoptosis (Programmed Cell Death):** Mitochondria help decide when a cell is damaged beyond repair and trigger its destruction, which is vital for preventing diseases like cancer and for normal embryonic development.\n* **Calcium Storage:** They store calcium ions, which are important for cell signaling, muscle contraction, and blood clotting.\n* **Heat Production:** Specialized mitochondria (found in brown fat) can generate heat instead of ATP, which is especially important for keeping newborns and hibernating animals warm.\n\n### Summary\nIn short, mitochondria take in the fuel and oxygen your body consumes and convert it into the usable energy ($ATP$) required to keep your cells\u2014and your entire body\u2014alive and functioning.",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The generated answer is factually accurate and provides a comprehensive explanation of the mitochondria's primary function, exceeding the detail provided in the reference while remaining entirely relevant."
+      },
+      "passed": true,
+      "latency_ms": 3277.48
+    },
+    {
+      "test_id": "TC-003",
+      "question": "Who wrote the dystopian novel '1984'?",
+      "generated_answer": "The dystopian novel '1984' was written by **George Orwell** (the pen name of Eric Arthur Blair) and was published in 1949.",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The answer correctly identifies George Orwell as the author and provides additional accurate context without detracting from the core answer."
+      },
+      "passed": true,
+      "latency_ms": 823.0
+    },
+    {
+      "test_id": "TC-004",
+      "question": "What is the exact speed of light in a vacuum in meters per second?",
+      "generated_answer": "The exact speed of light in a vacuum is **299,792,458 meters per second**. \n\nThis value is exact because, since 1983, the meter has been defined by the General Conference on Weights and Measures as the distance that light travels in a vacuum in exactly 1/299,792,458th of a second.",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The answer provides the exact numerical value requested and includes accurate historical context regarding the definition of the meter."
+      },
+      "passed": true,
+      "latency_ms": 1259.53
+    },
+    {
+      "test_id": "TC-005",
+      "question": "What does HTTP stand for in networking?",
+      "generated_answer": "HTTP stands for **HyperText Transfer Protocol**.",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The generated answer correctly identifies the acronym and matches the reference answer perfectly."
+      },
+      "passed": true,
+      "latency_ms": 996.3
+    },
+    {
+      "test_id": "TC-006",
+      "question": "How many states make up the United States of America?",
+      "generated_answer": "There are **50** states that make up the United States of America.",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The answer correctly identifies that there are 50 states and directly addresses the question."
+      },
+      "passed": true,
+      "latency_ms": 839.84
+    },
+    {
+      "test_id": "TC-007",
+      "question": "What is the chemical symbol for the element Gold?",
+      "generated_answer": "The chemical symbol for Gold is **Au**.",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The generated answer correctly identifies the chemical symbol for Gold as Au, matching the reference answer perfectly."
+      },
+      "passed": true,
+      "latency_ms": 1244.94
+    },
+    {
+      "test_id": "TC-008",
+      "question": "Who was the first President of the United States?",
+      "generated_answer": "The first President of the United States was George Washington. He served from 1789 to 1797.",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The answer correctly identifies George Washington as the first president and provides accurate additional context without being off-topic."
+      },
+      "passed": true,
+      "latency_ms": 1003.09
+    },
+    {
+      "test_id": "TC-009",
+      "question": "What primary astronomical body's gravity causes the tides on Earth?",
+      "generated_answer": "The primary astronomical body that causes the tides on Earth is the **Moon**, followed by the **Sun** (which plays a secondary, modulating role).",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The generated answer accurately identifies the Moon as the primary cause and correctly notes the Sun's secondary role, aligning perfectly with the reference."
+      },
+      "passed": true,
+      "latency_ms": 1183.88
+    },
+    {
+      "test_id": "TC-010",
+      "question": "In the Python programming language, what is a dictionary?",
+      "generated_answer": "In Python, a **dictionary** is a built-in data structure used to store data in **key-value pairs**. \n\nThink of it like a real-world dictionary: you look up a specific word (the **key**) to find its definition (the **value**). \n\nHere are the key characteristics of Python dictionaries:\n\n### 1. Syntax\nDictionaries are defined using curly braces `{}`, with key-value pairs separated by colons `:`, and individual pairs separated by commas `,`.\n\n```python\n# A dictionary representing a person\nmy_dict = {\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"city\": \"New York\",\n}\n```\n\n### 2. Key-Value Pairs\n* **Keys:** Must be unique and of an **immutable** data type (like strings, numbers, or tuples). You use keys to look up corresponding values.\n* **Values:** Can be of any data type (strings, integers, lists, even other dictionaries) and they can be duplicated.\n\n### 3. How to Access Data\nInstead of using numerical indices (like lists do, e.g., `my_list[0]`), you access dictionary values by referencing their keys:\n\n```python\nprint(my_dict[\"name\"])  # Output: Alice\nprint(my_dict[\"age\"])  # Output: 30\n```\n\n### 4. Mutable (Changeable)\nYou can add, modify, or delete items in a dictionary after it has been created.\n\n```python\n# Adding a new key-value pair\nmy_dict[\"email\"] = \"alice@example.com\"\n\n# Modifying an existing value\nmy_dict[\"age\"] = 31\n\n# Removing a key-value pair\ndel my_dict[\"city\"]\n```\n\n### 5. Key Characteristics (Summary)\n* **Unordered** (Prior to Python 3.7, dictionaries had no guaranteed order. From Python 3.7 onwards, they maintain the **insertion order**).\n* **Fast lookups:** Dictionaries are optimized for retrieving values when you know the key, making them very efficient even for large amounts of data (thanks to an underlying algorithm called hashing).\n\n### Common Methods\nPython provides several built-in methods to work with dictionaries easily:\n* `my_dict.keys()`: Returns all the keys.\n* `my_dict.values()`: Returns all the values.\n* `my_dict.items()`: Returns all key-value pairs as tuples.\n* `my_dict.get(\"key\")`: Safely retrieves a value (returns `None` instead of an error if the key doesn't exist).",
+      "scores": {
+        "correctness": 5,
+        "relevance": 5,
+        "reasoning": "The generated answer is factually accurate and provides a comprehensive explanation of Python dictionaries, going beyond the reference answer while remaining directly relevant to the question."
+      },
+      "passed": true,
+      "latency_ms": 2613.98
+    }
+  ]
+}

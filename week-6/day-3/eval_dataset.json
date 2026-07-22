@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC-001",
+    "question": "What is the capital of Australia?",
+    "reference_answer": "The capital of Australia is Canberra."
+  },
+  {
+    "id": "TC-002",
+    "question": "Explain the primary function of mitochondria.",
+    "reference_answer": "Mitochondria generate most of the chemical energy needed to power the cell's biochemical reactions, acting as the powerhouse of the cell."
+  },
+  {
+    "id": "TC-003",
+    "question": "Who wrote the dystopian novel '1984'?",
+    "reference_answer": "George Orwell wrote 1984."
+  },
+  {
+    "id": "TC-004",
+    "question": "What is the exact speed of light in a vacuum in meters per second?",
+    "reference_answer": "The speed of light in a vacuum is exactly 299,792,458 meters per second."
+  },
+  {
+    "id": "TC-005",
+    "question": "What does HTTP stand for in networking?",
+    "reference_answer": "HTTP stands for HyperText Transfer Protocol."
+  },
+  {
+    "id": "TC-006",
+    "question": "How many states make up the United States of America?",
+    "reference_answer": "There are 50 states in the United States."
+  },
+  {
+    "id": "TC-007",
+    "question": "What is the chemical symbol for the element Gold?",
+    "reference_answer": "The chemical symbol for Gold is Au."
+  },
+  {
+    "id": "TC-008",
+    "question": "Who was the first President of the United States?",
+    "reference_answer": "George Washington was the first President of the United States."
+  },
+  {
+    "id": "TC-009",
+    "question": "What primary astronomical body's gravity causes the tides on Earth?",
+    "reference_answer": "The Moon's gravity is the primary cause of Earth's tides (with the Sun also contributing)."
+  },
+  {
+    "id": "TC-010",
+    "question": "In the Python programming language, what is a dictionary?",
+    "reference_answer": "A dictionary in Python is a built-in data structure used to store collections of data in key-value pairs."
+  }
+]
