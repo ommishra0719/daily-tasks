@@ -39,3 +39,7 @@ app.db
 .coverage
 htmlcov/
 .pytest_cache/
+
+# Generated vector DB data
+chroma_db/
+*.sqlite3
