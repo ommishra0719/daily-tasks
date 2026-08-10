@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  rag-assistant:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - SECRET_KEY=${SECRET_KEY:-supersecret-change-in-prod}
+      - DATABASE_URL=sqlite+aiosqlite:////data/rag_assistant.db
+    volumes:
+      - db-data:/data      # persists SQLite DB across restarts
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  db-data:
